@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,1893 +6,673 @@
 <title>Anjali | Personal Portfolio</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
-    scroll-behavior: smooth;
-}
-
-body {
-    background: #080d1c;
-    color: white;
-    overflow-x: hidden;
-}
-
-section {
-    padding: 90px 8%;
-}
-
-.heading {
-    text-align: center;
-    font-size: 38px;
-    color: #38bdf8;
-    margin-bottom: 15px;
-}
-
-.subheading {
-    text-align: center;
-    color: #94a3b8;
-    margin-bottom: 45px;
-}
-
-/* NAVBAR */
-
-header {
-    width: 100%;
-    padding: 20px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(8,13,28,.95);
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid #1e293b;
-}
-
-.logo {
-    font-size: 25px;
-    font-weight: bold;
-    color: #38bdf8;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: 14px;
-    transition: .3s;
-}
-
-nav a:hover {
-    color: #38bdf8;
-}
-
-/* HOME */
-
-.home {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    background: radial-gradient(circle at 80% 40%, #172554, transparent 40%);
-}
-
-.home-content {
-    max-width: 650px;
-    animation: slideLeft 1s ease;
-}
-
-.home-content h3 {
-    font-size: 25px;
-    color: #cbd5e1;
-}
-
-.home-content h1 {
-    font-size: 55px;
-    color: #38bdf8;
-    margin: 10px 0;
-}
-
-.home-content h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.home-content p {
-    color: #94a3b8;
-    line-height: 1.8;
-    font-size: 17px;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 13px 28px;
-    background: #38bdf8;
-    color: #080d1c;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: .3s;
-}
-
-.btn:hover {
-    background: white;
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px #38bdf8;
-}
-
-.home-image {
-    width: 280px;
-    height: 280px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    border: 5px solid #38bdf8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 90px;
-    color: #38bdf8;
-    background: #172554;
-    box-shadow: 0 0 40px #0ea5e9;
-    animation: float 3s infinite ease-in-out;
-}
-
-/* ABOUT */
-
-.about,
-.profiles {
-    background: #0f172a;
-}
-
-.about-box {
-    max-width: 850px;
-    margin: auto;
-    padding: 35px;
-    background: #172554;
-    border-radius: 20px;
-    border: 1px solid #334155;
-    text-align: center;
-    transition: .4s;
-}
-
-.about-box:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 25px #0ea5e9;
-}
-
-.about-box p {
-    color: #cbd5e1;
-    line-height: 1.9;
-    font-size: 17px;
-}
-
-/* SKILLS */
-
-.skills-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.skill-card {
-    padding: 30px;
-    background: #172554;
-    border-radius: 18px;
-    text-align: center;
-    border: 1px solid #334155;
-    transition: .4s;
-}
-
-.skill-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 25px #38bdf8;
-}
-
-.skill-card h3 {
-    color: #38bdf8;
-    margin-bottom: 12px;
-    font-size: 22px;
-}
-
-.skill-card p {
-    color: #cbd5e1;
-}
-
-/* PROJECTS */
-
-.projects {
-    background: #080d1c;
-}
-
-.projects-container {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 22px;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.project-card {
-    background: #172554;
-    border: 1px solid #334155;
-    border-radius: 18px;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    min-height: 230px;
-    transition: .35s;
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-    border-color: #38bdf8;
-    box-shadow: 0 0 22px rgba(56,189,248,.2);
-}
-
-.project-card h3 {
-    color: #38bdf8;
-    font-size: 21px;
-    margin-bottom: 12px;
-    overflow-wrap: anywhere;
-}
-
-.project-card p {
-    color: #cbd5e1;
-    line-height: 1.6;
-    font-size: 14px;
-    flex: 1;
-}
-
-.project-meta {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    color: #94a3b8;
-    font-size: 12px;
-    margin: 18px 0;
-}
-
-.project-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.project-actions a {
-    display: inline-block;
-    text-decoration: none;
-    background: #38bdf8;
-    color: #080d1c;
-    padding: 9px 14px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 700;
-    transition: .3s;
-}
-
-.project-actions a:hover {
-    background: white;
-}
-
-.project-actions a.demo-link {
-    background: #38bdf8;
-    border: 1px solid #38bdf8;
-    color: #080d1c;
-}
-
-.project-actions a.demo-link:hover {
-    background: white;
-    border-color: white;
-    color: #080d1c;
-}
-
-/* CODING PROFILES */
-
-.profile-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-}
-
-.profile-card {
-    background: #172554;
-    padding: 35px 20px;
-    border-radius: 18px;
-    border: 1px solid #334155;
-    text-align: center;
-    transition: .4s;
-}
-
-.profile-card:hover {
-    transform: translateY(-12px) scale(1.03);
-    box-shadow: 0 0 25px #38bdf8;
-}
-
-.profile-card h3 {
-    color: white;
-    font-size: 23px;
-    margin-bottom: 12px;
-}
-
-.profile-card p {
-    color: #94a3b8;
-    margin-bottom: 25px;
-    font-size: 14px;
-}
-
-.profile-card a {
-    display: inline-block;
-    padding: 11px 18px;
-    background: #38bdf8;
-    color: #080d1c;
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: bold;
-    transition: .3s;
-}
-
-.profile-card a:hover {
-    background: white;
-    transform: scale(1.08);
-}
-
-/* DAILY TRACKER */
-
-.tracker {
-    background: #080d1c;
-}
-
-.tracker-box {
-    max-width: 900px;
-    margin: auto;
-    background: #172554;
-    padding: 30px;
-    border-radius: 20px;
-    border: 1px solid #334155;
-    box-shadow: 0 0 25px rgba(56,189,248,.1);
-}
-
-[hidden] {
-    display: none !important;
-}
-
-.tracker-note {
-    max-width: 900px;
-    margin: -24px auto 28px;
-    color: #94a3b8;
-    text-align: center;
-    line-height: 1.7;
-    font-size: 14px;
-}
-
-.tracker-access-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-bottom: 18px;
-}
-
-.access-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 13px;
-    border-radius: 30px;
-    background: rgba(74,222,128,.1);
-    border: 1px solid rgba(74,222,128,.35);
-    color: #86efac;
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.entry-count {
-    color: #94a3b8;
-    font-size: 13px;
-}
-
-.calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-    gap: 10px;
-}
-
-.calendar-header button {
-    padding: 10px 18px;
-    background: #38bdf8;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.calendar-header h3 {
-    font-size: 22px;
-    color: #38bdf8;
-}
-
-.calendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 8px;
-}
-
-.day-name {
-    text-align: center;
-    color: #38bdf8;
-    font-weight: bold;
-    padding: 10px 0;
-}
-
-.date {
-    min-height: 48px;
-    background: #0f172a;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: .3s;
-    position: relative;
-    border: 0;
-    color: white;
-    font-size: 15px;
-}
-
-.date:hover {
-    background: #0369a1;
-}
-
-.date.selected {
-    background: #38bdf8;
-    color: #080d1c;
-    font-weight: bold;
-}
-
-.date.today {
-    border: 2px solid #38bdf8;
-}
-
-.date.has-entry:after {
-    content: "";
-    width: 6px;
-    height: 6px;
-    background: #4ade80;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 5px;
-}
-
-.empty {
-    min-height: 48px;
-}
-
-/* PROGRESS ENTRY DISPLAY */
-
-.entry-display {
-    margin-top: 26px;
-    padding: 22px;
-    background: #0f172a;
-    border: 1px solid #334155;
-    border-radius: 14px;
-    min-height: 110px;
-}
-
-.entry-display h3 {
-    color: #38bdf8;
-    font-size: 18px;
-    margin-bottom: 14px;
-}
-
-.entry-display .empty-message {
-    color: #94a3b8;
-    line-height: 1.7;
-}
-
-.entry-field {
-    margin-top: 13px;
-    padding-top: 13px;
-    border-top: 1px solid #26364f;
-}
-
-.entry-field strong {
-    display: block;
-    color: #7dd3fc;
-    font-size: 13px;
-    margin-bottom: 6px;
-}
-
-.entry-field p {
-    color: #e2e8f0;
-    line-height: 1.7;
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
-}
-
-/* OWNER LOGIN */
-
-.owner-login,
-.owner-panel {
-    margin-top: 24px;
-    padding: 22px;
-    border: 1px solid #334155;
-    border-radius: 14px;
-    background: #101d35;
-}
-
-.owner-login h3,
-.owner-panel h3 {
-    color: #38bdf8;
-    margin-bottom: 8px;
-}
-
-.owner-login p,
-.owner-panel > p {
-    color: #94a3b8;
-    line-height: 1.6;
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
-.owner-login label {
-    display: block;
-    color: #cbd5e1;
-    margin: 12px 0 8px;
-}
-
-.owner-login input {
-    width: 100%;
-    padding: 13px;
-    background: #0f172a;
-    color: white;
-    border: 1px solid #475569;
-    border-radius: 8px;
-    font-size: 15px;
-}
-
-.owner-login input:focus {
-    outline: none;
-    border-color: #38bdf8;
-}
-
-.owner-login button,
-.lock-btn {
-    margin-top: 14px;
-    padding: 11px 18px;
-    border: 0;
-    border-radius: 8px;
-    background: #38bdf8;
-    color: #080d1c;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.login-error {
-    color: #fca5a5 !important;
-    margin: 10px 0 0 !important;
-}
-
-.owner-panel {
-    background: #102b2b;
-    border-color: #25645d;
-}
-
-.owner-panel-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.owner-badge {
-    color: #86efac;
-    background: rgba(74,222,128,.1);
-    border: 1px solid rgba(74,222,128,.35);
-    border-radius: 20px;
-    padding: 6px 10px;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.owner-panel .work-form {
-    margin-top: 18px;
-}
-
-.owner-panel .lock-btn {
-    background: #334155;
-    color: white;
-    margin-top: 0;
-}
-
-.calendar-header button:focus-visible,
-.date:focus-visible,
-.owner-login button:focus-visible,
-.lock-btn:focus-visible {
-    outline: 2px solid white;
-    outline-offset: 3px;
-}
-
-/* WORK FORM */
-
-.work-form {
-    margin-top: 35px;
-    border-top: 1px solid #334155;
-    padding-top: 25px;
-}
-
-.work-form h3 {
-    color: #38bdf8;
-    margin-bottom: 8px;
-}
-
-.work-form label {
-    display: block;
-    margin: 15px 0 8px;
-    color: #cbd5e1;
-}
-
-.work-form input,
-.work-form textarea {
-    width: 100%;
-    padding: 13px;
-    background: #0f172a;
-    color: white;
-    border: 1px solid #475569;
-    border-radius: 8px;
-    outline: none;
-    font-size: 15px;
-}
-
-.work-form textarea {
-    min-height: 130px;
-    resize: vertical;
-}
-
-.work-form input:focus,
-.work-form textarea:focus {
-    border-color: #38bdf8;
-}
-
-.save-btn,
-.delete-btn {
-    margin-top: 20px;
-    padding: 13px 24px;
-    border: none;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.save-btn {
-    background: #38bdf8;
-    color: #080d1c;
-}
-
-.save-btn:hover {
-    background: white;
-    transform: scale(1.04);
-}
-
-.delete-btn {
-    margin-left: 10px;
-    background: #ef4444;
-    color: white;
-}
-
-/* FOOTER */
-
-footer {
-    padding: 30px;
-    background: #0f172a;
-    text-align: center;
-    color: #94a3b8;
-    line-height: 1.8;
-}
-
-footer span {
-    color: #38bdf8;
-}
-
-/* ANIMATIONS */
-
-@keyframes float {
-    0%,100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
-@keyframes slideLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* RESPONSIVE DESIGN */
-
-@media(max-width:1000px) {
-    header {
-        padding: 16px 5%;
-    }
-
-    nav a {
-        margin-left: 10px;
-        font-size: 13px;
-    }
-
-    section {
-        padding: 80px 5%;
-    }
-
-    .projects-container {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
-    .profile-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media(max-width:700px) {
-    header {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    nav a {
-        margin: 0;
-    }
-
-    .home {
-        flex-direction: column-reverse;
-        justify-content: center;
-        text-align: center;
-        padding-top: 140px;
-    }
-
-    .home-content h1 {
-        font-size: 40px;
-    }
-
-    .home-image {
-        width: 200px;
-        height: 200px;
-        font-size: 65px;
-    }
-
-    .skills-container,
-    .profile-container,
-    .projects-container {
-        grid-template-columns: 1fr;
-    }
-
-    .heading {
-        font-size: 30px;
-    }
-
-    section {
-        padding: 75px 5%;
-    }
-
-    .tracker-box {
-        padding: 15px;
-    }
-
-    .date {
-        min-height: 40px;
-        font-size: 13px;
-    }
-
-    .calendar {
-        gap: 4px;
-    }
-
-    .calendar-header h3 {
-        font-size: 17px;
-    }
-
-    .calendar-header button {
-        padding: 8px 10px;
-        font-size: 12px;
-    }
-
-    .delete-btn {
-        margin-left: 0;
-    }
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;scroll-behavior:smooth}
+body{background:#080d1c;color:white;overflow-x:hidden}
+section{padding:90px 8%}
+.heading{text-align:center;font-size:38px;color:#38bdf8;margin-bottom:15px}
+.subheading{text-align:center;color:#94a3b8;margin-bottom:45px}
+header{width:100%;padding:20px 8%;display:flex;justify-content:space-between;align-items:center;background:rgba(8,13,28,.95);position:fixed;top:0;z-index:1000;backdrop-filter:blur(15px);border-bottom:1px solid #1e293b}
+.logo{font-size:25px;font-weight:bold;color:#38bdf8}
+nav a{color:white;text-decoration:none;margin-left:20px;font-size:14px}
+nav a:hover{color:#38bdf8}
+.home{min-height:100vh;display:flex;align-items:center;justify-content:space-between;gap:40px;background:radial-gradient(circle at 80% 40%,#172554,transparent 40%)}
+.home-content{max-width:650px;animation:slideLeft 1s ease}
+.home-content h3{font-size:25px;color:#cbd5e1}
+.home-content h1{font-size:55px;color:#38bdf8;margin:10px 0}
+.home-content h2{font-size:28px;margin-bottom:20px}
+.home-content p{color:#94a3b8;line-height:1.8;font-size:17px}
+.btn{display:inline-block;margin-top:30px;padding:13px 28px;background:#38bdf8;color:#080d1c;border-radius:30px;text-decoration:none;font-weight:bold}
+.btn:hover{background:white;transform:translateY(-5px);box-shadow:0 0 20px #38bdf8}
+.home-image{width:280px;height:280px;flex-shrink:0;border-radius:50%;border:5px solid #38bdf8;display:flex;align-items:center;justify-content:center;font-size:90px;color:#38bdf8;background:#172554;box-shadow:0 0 40px #0ea5e9;animation:float 3s infinite ease-in-out}
+.about,.profiles{background:#0f172a}
+.about-box{max-width:850px;margin:auto;padding:35px;background:#172554;border-radius:20px;border:1px solid #334155;text-align:center;transition:.4s}
+.about-box:hover{transform:translateY(-8px);box-shadow:0 0 25px #0ea5e9}
+.about-box p{color:#cbd5e1;line-height:1.9;font-size:17px}
+.skills-container{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.skill-card{padding:30px;background:#172554;border-radius:18px;text-align:center;border:1px solid #334155;transition:.4s}
+.skill-card:hover{transform:translateY(-10px);box-shadow:0 0 25px #38bdf8}
+.skill-card h3{color:#38bdf8;margin-bottom:12px;font-size:22px}
+.skill-card p{color:#cbd5e1}
+.projects{background:#080d1c}
+.projects-container{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;max-width:700px;margin:auto}
+.project-card{background:#172554;border:1px solid #334155;border-radius:18px;padding:25px;display:flex;flex-direction:column;min-height:230px;transition:.35s}
+.project-card:hover{transform:translateY(-8px);border-color:#38bdf8;box-shadow:0 0 22px rgba(56,189,248,.2)}
+.project-card h3{color:#38bdf8;font-size:21px;margin-bottom:12px}
+.project-card p{color:#cbd5e1;line-height:1.6;font-size:14px;flex:1}
+.project-meta{display:flex;justify-content:space-between;gap:10px;color:#94a3b8;font-size:12px;margin:18px 0}
+.project-actions{display:flex;flex-wrap:wrap;gap:10px}
+.project-actions a{display:inline-block;text-decoration:none;background:#38bdf8;color:#080d1c;padding:9px 14px;border-radius:20px;font-size:13px;font-weight:700}
+.profile-container{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
+.profile-card{background:#172554;padding:35px 20px;border-radius:18px;border:1px solid #334155;text-align:center;transition:.4s}
+.profile-card:hover{transform:translateY(-12px) scale(1.03);box-shadow:0 0 25px #38bdf8}
+.profile-card h3{font-size:23px;margin-bottom:12px}
+.profile-card p{color:#94a3b8;margin-bottom:25px;font-size:14px}
+.profile-card a{display:inline-block;padding:11px 18px;background:#38bdf8;color:#080d1c;text-decoration:none;border-radius:25px;font-weight:bold}
+.tracker{background:#080d1c}
+.tracker-box{max-width:900px;margin:auto;background:#172554;padding:30px;border-radius:20px;border:1px solid #334155;box-shadow:0 0 25px rgba(56,189,248,.1)}
+[hidden]{display:none!important}
+.tracker-note{max-width:900px;margin:-24px auto 28px;color:#94a3b8;text-align:center;line-height:1.7;font-size:14px}
+.tracker-access-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.access-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:30px;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.35);color:#86efac;font-size:13px;font-weight:700}
+.entry-count{color:#94a3b8;font-size:13px}
+.calendar-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;gap:10px}
+.calendar-header button{padding:10px 18px;background:#38bdf8;border:none;border-radius:8px;cursor:pointer;font-weight:bold}
+.calendar-header h3{font-size:22px;color:#38bdf8}
+.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.day-name{text-align:center;color:#38bdf8;font-weight:bold;padding:10px 0}
+.date{min-height:48px;background:#0f172a;border-radius:8px;display:flex;justify-content:center;align-items:center;cursor:pointer;position:relative;border:0;color:white;font-size:15px}
+.date:hover{background:#0369a1}
+.date.selected{background:#38bdf8;color:#080d1c;font-weight:bold}
+.date.today{border:2px solid #38bdf8}
+.date.has-entry:after{content:"";width:6px;height:6px;background:#4ade80;border-radius:50%;position:absolute;bottom:5px}
+.empty{min-height:48px}
+.entry-display{margin-top:26px;padding:22px;background:#0f172a;border:1px solid #334155;border-radius:14px;min-height:110px}
+.entry-display h3{color:#38bdf8;font-size:18px;margin-bottom:14px}
+.entry-display .empty-message{color:#94a3b8;line-height:1.7}
+.entry-field{margin-top:13px;padding-top:13px;border-top:1px solid #26364f}
+.entry-field strong{display:block;color:#7dd3fc;font-size:13px;margin-bottom:6px}
+.entry-field p{color:#e2e8f0;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere}
+.owner-login,.owner-panel{margin-top:24px;padding:22px;border:1px solid #334155;border-radius:14px;background:#101d35}
+.owner-login h3,.owner-panel h3{color:#38bdf8;margin-bottom:8px}
+.owner-login p,.owner-panel>p{color:#94a3b8;line-height:1.6;font-size:14px;margin-bottom:15px}
+.owner-login label,.work-form label{display:block;color:#cbd5e1;margin:12px 0 8px}
+.owner-login input,.work-form input,.work-form textarea{width:100%;padding:13px;background:#0f172a;color:white;border:1px solid #475569;border-radius:8px;font-size:15px}
+.owner-login input:focus,.work-form input:focus,.work-form textarea:focus{outline:none;border-color:#38bdf8}
+.owner-login button,.lock-btn{margin-top:14px;padding:11px 18px;border:0;border-radius:8px;background:#38bdf8;color:#080d1c;font-weight:700;cursor:pointer}
+.owner-login button:disabled,.save-btn:disabled,.delete-btn:disabled{opacity:.6;cursor:not-allowed}
+.login-error{color:#fca5a5!important;margin:10px 0 0!important}
+.owner-panel{background:#102b2b;border-color:#25645d}
+.owner-panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.owner-badge{color:#86efac;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.35);border-radius:20px;padding:6px 10px;font-size:12px;font-weight:700}
+.owner-panel .lock-btn{background:#334155;color:white;margin-top:0}
+.work-form{margin-top:35px;border-top:1px solid #334155;padding-top:25px}
+.work-form textarea{min-height:130px;resize:vertical}
+.save-btn,.delete-btn{margin-top:20px;padding:13px 24px;border:none;border-radius:8px;font-size:15px;font-weight:bold;cursor:pointer}
+.save-btn{background:#38bdf8;color:#080d1c}
+.delete-btn{margin-left:10px;background:#ef4444;color:white}
+footer{padding:30px;background:#0f172a;text-align:center;color:#94a3b8;line-height:1.8}
+footer span{color:#38bdf8}
+#firebaseStatus{margin-top:12px;color:#94a3b8;font-size:13px;line-height:1.6}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+@keyframes slideLeft{from{opacity:0;transform:translateX(-50px)}to{opacity:1;transform:translateX(0)}}
+@media(max-width:1000px){header{padding:16px 5%}nav a{margin-left:10px;font-size:13px}section{padding:80px 5%}.profile-container{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){header{flex-direction:column;gap:12px}nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}nav a{margin:0}.home{flex-direction:column-reverse;justify-content:center;text-align:center;padding-top:150px}.home-content h1{font-size:40px}.home-image{width:200px;height:200px;font-size:65px}.skills-container,.profile-container{grid-template-columns:1fr}.heading{font-size:30px}section{padding:75px 5%}.tracker-box{padding:15px}.date{min-height:40px;font-size:13px}.calendar{gap:4px}.calendar-header h3{font-size:17px}.calendar-header button{padding:8px 10px;font-size:12px}.delete-btn{margin-left:0}}
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-
 <header>
-    <div class="logo">Anjali.</div>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#profiles">Profiles</a>
-        <a href="#tracker">Daily Tracker</a>
-    </nav>
+<div class="logo">Anjali.</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#profiles">Profiles</a>
+<a href="#tracker">Daily Tracker</a>
+</nav>
 </header>
 
-<!-- HOME -->
-
 <section class="home" id="home">
-
-    <div class="home-content">
-        <h3>Hello, I'm</h3>
-
-        <h1>Anjali Thakur</h1>
-
-        <h2>B.Tech CSE AI Student</h2>
-
-        <p>
-            Aspiring Software Developer passionate about Programming,
-            Data Structures and Algorithms, Web Development and
-            Problem Solving. I believe in learning something new
-            every day and building projects that solve real problems.
-        </p>
-
-        <a href="#projects" class="btn">Explore My Projects</a>
-    </div>
-
-    <div class="home-image">A</div>
-
+<div class="home-content">
+<h3>Hello, I'm</h3>
+<h1>Anjali Thakur</h1>
+<h2>B.Tech CSE AI Student</h2>
+<p>Aspiring Software Developer passionate about Programming, Data Structures and Algorithms, Web Development and Problem Solving. I believe in learning something new every day and building projects that solve real problems.</p>
+<a href="#projects" class="btn">Explore My Projects</a>
+</div>
+<div class="home-image">A</div>
 </section>
-
-<!-- ABOUT -->
 
 <section class="about" id="about">
-
-    <h2 class="heading">About Me</h2>
-
-    <p class="subheading">Get to know me</p>
-
-    <div class="about-box">
-
-        <p>
-            I am a B.Tech Computer Science and Engineering student
-            specializing in Artificial Intelligence. I am interested
-            in Software Development, Data Structures and Algorithms,
-            and Web Development. Currently, I am improving my
-            programming skills using C++ and practicing coding
-            problems. My goal is to become a skilled Software
-            Developer and work on meaningful real-world projects.
-        </p>
-
-    </div>
-
+<h2 class="heading">About Me</h2>
+<p class="subheading">Get to know me</p>
+<div class="about-box">
+<p>I am a B.Tech Computer Science and Engineering student specializing in Artificial Intelligence. I am interested in Software Development, Data Structures and Algorithms, and Web Development. Currently, I am improving my programming skills using C++ and practicing coding problems. My goal is to become a skilled Software Developer and work on meaningful real-world projects.</p>
+</div>
 </section>
-
-<!-- SKILLS -->
 
 <section id="skills">
-
-    <h2 class="heading">My Skills</h2>
-
-    <p class="subheading">
-        Technologies and areas I am learning
-    </p>
-
-    <div class="skills-container">
-
-        <div class="skill-card">
-            <h3>C++</h3>
-            <p>Programming and Problem Solving</p>
-        </div>
-
-        <div class="skill-card">
-            <h3>HTML</h3>
-            <p>Web Page Structure</p>
-        </div>
-
-        <div class="skill-card">
-            <h3>CSS</h3>
-            <p>Styling and Responsive Design</p>
-        </div>
-
-        <div class="skill-card">
-            <h3>JavaScript</h3>
-            <p>Interactive Web Development</p>
-        </div>
-
-        <div class="skill-card">
-            <h3>DSA</h3>
-            <p>Data Structures and Algorithms</p>
-        </div>
-
-        <div class="skill-card">
-            <h3>Git &amp; GitHub</h3>
-            <p>Version Control and Projects</p>
-        </div>
-
-    </div>
-
+<h2 class="heading">My Skills</h2>
+<p class="subheading">Technologies and areas I am learning</p>
+<div class="skills-container">
+<div class="skill-card"><h3>C++</h3><p>Programming and Problem Solving</p></div>
+<div class="skill-card"><h3>HTML</h3><p>Web Page Structure</p></div>
+<div class="skill-card"><h3>CSS</h3><p>Styling and Responsive Design</p></div>
+<div class="skill-card"><h3>JavaScript</h3><p>Interactive Web Development</p></div>
+<div class="skill-card"><h3>DSA</h3><p>Data Structures and Algorithms</p></div>
+<div class="skill-card"><h3>Git &amp; GitHub</h3><p>Version Control and Projects</p></div>
+</div>
 </section>
-
-<!-- PROJECTS -->
 
 <section class="projects" id="projects">
-
-    <h2 class="heading">My Projects</h2>
-
-    <p class="subheading">Explore my live project</p>
-
-    <div class="projects-container">
-
-        <article class="project-card">
-
-            <h3>Faculty Assignment Management System</h3>
-
-            <p>
-                A live Faculty Assignment Management System. Click below
-                to open and explore the working project.
-            </p>
-
-            <div class="project-meta">
-                <span>Live Website</span>
-            </div>
-
-            <div class="project-actions">
-
-                <a
-                    href="https://anjalith414-code.github.io/Faculty-Assignment-Management-System/"
-                    class="demo-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Open Live Project ↗
-                </a>
-
-            </div>
-
-        </article>
-
-    </div>
-
+<h2 class="heading">My Projects</h2>
+<p class="subheading">Explore my live project</p>
+<div class="projects-container">
+<article class="project-card">
+<h3>Faculty Assignment Management System</h3>
+<p>A live Faculty Assignment Management System. Click below to open and explore the working project.</p>
+<div class="project-meta"><span>Live Website</span></div>
+<div class="project-actions">
+<a href="https://anjalith414-code.github.io/Faculty-Assignment-Management-System/" target="_blank" rel="noopener noreferrer">Open Live Project ↗️</a>
+</div>
+</article>
+</div>
 </section>
-
-<!-- CODING PROFILES -->
 
 <section class="profiles" id="profiles">
-
-    <h2 class="heading">My Coding Profiles</h2>
-
-    <p class="subheading">
-        Connect with me and explore my coding journey
-    </p>
-
-    <div class="profile-container">
-
-        <div class="profile-card">
-            <h3>LinkedIn</h3>
-            <p>Professional Profile</p>
-
-            <a
-                href="https://www.linkedin.com/in/anjali-thakur-a18658383"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Visit LinkedIn →
-            </a>
-        </div>
-
-        <div class="profile-card">
-            <h3>GitHub</h3>
-            <p>My Projects &amp; Contributions</p>
-
-            <a
-                href="https://github.com/anjalith414-code"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Visit GitHub →
-            </a>
-        </div>
-
-        <div class="profile-card">
-            <h3>HackerRank</h3>
-            <p>Coding Practice &amp; Skills</p>
-
-            <a
-                href="https://www.hackerrank.com/profile/anjali8219218135"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Visit HackerRank →
-            </a>
-        </div>
-
-        <div class="profile-card">
-            <h3>LeetCode</h3>
-            <p>DSA &amp; Problem Solving</p>
-
-            <a
-                href="https://leetcode.com/u/AnjaliThakur/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Visit LeetCode →
-            </a>
-        </div>
-
-    </div>
-
+<h2 class="heading">My Coding Profiles</h2>
+<p class="subheading">Connect with me and explore my coding journey</p>
+<div class="profile-container">
+<div class="profile-card"><h3>LinkedIn</h3><p>Professional Profile</p><a href="https://www.linkedin.com/in/anjali-thakur-a18658383" target="_blank" rel="noopener noreferrer">Visit LinkedIn →</a></div>
+<div class="profile-card"><h3>GitHub</h3><p>My Projects &amp; Contributions</p><a href="https://github.com/anjalith414-code" target="_blank" rel="noopener noreferrer">Visit GitHub →</a></div>
+<div class="profile-card"><h3>HackerRank</h3><p>Coding Practice &amp; Skills</p><a href="https://www.hackerrank.com/profile/anjali8219218135" target="_blank" rel="noopener noreferrer">Visit HackerRank →</a></div>
+<div class="profile-card"><h3>LeetCode</h3><p>DSA &amp; Problem Solving</p><a href="https://leetcode.com/u/AnjaliThakur/" target="_blank" rel="noopener noreferrer">Visit LeetCode →</a></div>
+</div>
 </section>
-
-<!-- DAILY PROGRESS TRACKER -->
 
 <section class="tracker" id="tracker">
+<h2 class="heading">My Daily Progress</h2>
+<p class="subheading">A record of what I learn and build every day</p>
+<p class="tracker-note">Visitors can view saved progress entries. Editing controls are available only after owner login.</p>
 
-    <h2 class="heading">My Daily Progress</h2>
+<div class="tracker-box">
+<div class="tracker-access-row">
+<span class="access-pill">● Public view · Read only</span>
+<span class="entry-count" id="entryCount">Loading entries...</span>
+</div>
 
-    <p class="subheading">
-        A record of what I learn and build every day
-    </p>
+<div class="calendar-header">
+<button type="button" id="previousMonth">❮ Previous</button>
+<h3 id="monthYear"></h3>
+<button type="button" id="nextMonth">Next ❯</button>
+</div>
 
-    <p class="tracker-note">
-        Visitors can view the saved progress entries.
-        Editing controls are available only after owner unlock.
-    </p>
+<div class="calendar" id="calendar"></div>
 
-    <div class="tracker-box">
+<div class="entry-display" id="entryDisplay" aria-live="polite">
+<h3>Select a date</h3>
+<p class="empty-message">Select a date on the calendar to view its progress entry.</p>
+</div>
 
-        <div class="tracker-access-row">
+<div class="owner-login" id="ownerLoginPanel">
+<h3>Owner Login</h3>
+<p>Enter the email and password registered in Firebase Authentication.</p>
 
-            <span class="access-pill">
-                <span aria-hidden="true">●</span>
-                Public view · Read only
-            </span>
+<label for="ownerEmail">Owner Email</label>
+<input type="email" id="ownerEmail" placeholder="Enter your Firebase email" autocomplete="username">
 
-            <span class="entry-count" id="entryCount">
-                0 saved entries
-            </span>
+<label for="ownerPassword">Owner Password</label>
+<input type="password" id="ownerPassword" placeholder="Enter your password" autocomplete="current-password">
 
-        </div>
+<button type="button" id="loginButton">Unlock Editing</button>
+<p class="login-error" id="loginError" role="alert" hidden></p>
+<p id="firebaseStatus" aria-live="polite">Connecting to Firebase...</p>
+</div>
 
-        <!-- CALENDAR -->
+<div class="owner-panel" id="ownerPanel" hidden>
+<div class="owner-panel-head">
+<div>
+<h3>Owner Editing Mode</h3>
+<span class="owner-badge">Unlocked · Anjali</span>
+</div>
+<button class="lock-btn" type="button" id="lockButton">🔒 Lock Editing</button>
+</div>
 
-        <div class="calendar-header">
+<p id="ownerUnlockMessage">You are signed in. Write your work below, then press Save Progress.</p>
 
-            <button
-                type="button"
-                onclick="changeMonth(-1)"
-                aria-label="Previous month"
-            >
-                ❮ Previous
-            </button>
+<div class="work-form">
+<h3 id="selectedDate">Select a date</h3>
 
-            <h3 id="monthYear"></h3>
+<label for="focus">Today's Focus / Topic</label>
+<input type="text" id="focus" placeholder="Example: C++ Functions, Arrays, HTML...">
 
-            <button
-                type="button"
-                onclick="changeMonth(1)"
-                aria-label="Next month"
-            >
-                Next ❯
-            </button>
+<label for="work">Describe Your Daily Work</label>
+<textarea id="work" placeholder="Write your daily progress here..."></textarea>
 
-        </div>
+<label for="time">Time Spent</label>
+<input type="text" id="time" placeholder="Example: 2 Hours">
 
-        <div
-            class="calendar"
-            id="calendar"
-            aria-label="Daily progress calendar"
-        ></div>
-
-        <!-- PUBLIC ENTRY DISPLAY -->
-
-        <div
-            class="entry-display"
-            id="entryDisplay"
-            aria-live="polite"
-        >
-
-            <h3 id="entryDisplayDate">Select a date</h3>
-
-            <p class="empty-message">
-                Select a date on the calendar to view its progress entry.
-            </p>
-
-        </div>
-
-        <!-- OWNER LOGIN -->
-
-        <div class="owner-login" id="ownerLoginPanel">
-
-            <h3>Owner Login</h3>
-
-            <p>
-                Want to add or edit your daily progress?
-                Unlock the owner controls with your password.
-            </p>
-
-            <div class="owner-login-form">
-
-                <label for="ownerPassword">Owner Password</label>
-
-                <input
-                    type="password"
-                    id="ownerPassword"
-                    placeholder="Enter owner password"
-                    autocomplete="current-password"
-                >
-
-                <button
-                    type="button"
-                    id="unlockButton"
-                    onclick="unlockOwner()"
-                >
-                    Unlock Editing
-                </button>
-
-                <p
-                    class="login-error"
-                    id="loginError"
-                    role="alert"
-                    hidden
-                >
-                    Incorrect password. Please try again.
-                </p>
-
-            </div>
-
-        </div>
-
-        <!-- OWNER EDITING PANEL -->
-
-        <div class="owner-panel" id="ownerPanel" hidden>
-
-            <div class="owner-panel-head">
-
-                <div>
-                    <h3>Owner Editing Mode</h3>
-                    <span class="owner-badge">Unlocked · Anjali</span>
-                </div>
-
-                <button
-                    class="lock-btn"
-                    type="button"
-                    onclick="lockOwner()"
-                >
-                    🔒 Lock Editing
-                </button>
-
-            </div>
-
-            <p id="ownerUnlockMessage">
-                You are unlocked. Write your work in the fields below,
-                then press Save Progress.
-            </p>
-
-            <div class="work-form">
-
-                <h3 id="selectedDate">Select a date</h3>
-
-                <label for="focus">Today's Focus / Topic</label>
-
-                <input
-                    type="text"
-                    id="focus"
-                    placeholder="Example: C++ Functions, Arrays, HTML..."
-                >
-
-                <label for="work">Describe Your Daily Work</label>
-
-                <textarea
-                    id="work"
-                    placeholder="Write your daily progress here..."
-                ></textarea>
-
-                <label for="time">Time Spent</label>
-
-                <input
-                    type="text"
-                    id="time"
-                    placeholder="Example: 2 Hours"
-                >
-
-                <button
-                    class="save-btn"
-                    type="button"
-                    onclick="saveWork()"
-                >
-                    Save Progress
-                </button>
-
-                <button
-                    class="delete-btn"
-                    type="button"
-                    onclick="deleteWork()"
-                >
-                    Delete Entry
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
+<button class="save-btn" type="button" id="saveButton">Save Progress</button>
+<button class="delete-btn" type="button" id="deleteButton">Delete Entry</button>
+</div>
+</div>
+</div>
 </section>
 
-<!-- FOOTER -->
-
 <footer>
-
-    <p>Made with ❤️ by <span>Anjali Thakur</span></p>
-
-    <p>© 2026 All Rights Reserved.</p>
-
+<p>Made with ❤️ by <span>Anjali Thakur</span></p>
+<p>© 2026 All Rights Reserved.</p>
 </footer>
 
+<!-- Firebase SDK: keep these three scripts before your own JavaScript -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
 <script>
+"use strict";
 
-/* DAILY PROGRESS TRACKER
-   This is a front-end demo only.
-   Entries are saved in this browser using localStorage.
-   The password is not secure authentication.
-*/
+/* YOUR FIREBASE PROJECT CONFIGURATION */
+const firebaseConfig = {
+    apiKey: "AIzaSyDRNT8yUeK3qkuJpbgCDAUqCqAyF9m2XGQ",
+    authDomain: "anjali-portfolio-e38ed.firebaseapp.com",
+    projectId: "anjali-portfolio-e38ed",
+    storageBucket: "anjali-portfolio-e38ed.firebasestorage.app",
+    messagingSenderId: "551555884476",
+    appId: "1:551555884476:web:2d33c36c7d73b85ef737b9",
+    measurementId: "G-LFMH8YB5JN"
+};
 
-const OWNER_PASSWORD = "Anjali@0-7-7";
+const COLLECTION_NAME = "dailyWork";
 
-const STORAGE_KEY = "anjaliProgress";
-
+let auth;
+let db;
 let currentDate = new Date();
-
 let selectedDate = toDateKey(new Date());
-
 let ownerMode = false;
-
 let entries = {};
+let unsubscribeEntries = null;
 
+const $ = id => document.getElementById(id);
 
-/* LOAD SAVED ENTRIES */
-
-try {
-
-    const savedEntries = localStorage.getItem(STORAGE_KEY);
-
-    entries = savedEntries ? JSON.parse(savedEntries) : {};
-
-    if (
-        !entries ||
-        typeof entries !== "object" ||
-        Array.isArray(entries)
-    ) {
-        entries = {};
-    }
-
-} catch (error) {
-
-    console.warn(
-        "Saved progress could not be read in this browser.",
-        error
-    );
-
-    entries = {};
-
-}
-
-
-/* DATE KEY */
+/* DATE FUNCTIONS */
 
 function toDateKey(date) {
-
     const year = date.getFullYear();
-
-    const month = String(
-        date.getMonth() + 1
-    ).padStart(2, "0");
-
-    const day = String(
-        date.getDate()
-    ).padStart(2, "0");
-
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
     return `${year}-${month}-${day}`;
-
 }
 
-
-/* FORMAT DATE */
-
 function formatDate(dateKey) {
-
-    const [year, month, day] =
-        dateKey.split("-").map(Number);
-
-    return new Date(
-        year,
-        month - 1,
-        day
-    ).toLocaleDateString("en-IN", {
-
+    const [year, month, day] = dateKey.split("-").map(Number);
+    return new Date(year, month - 1, day).toLocaleDateString("en-IN", {
         day: "numeric",
         month: "long",
         year: "numeric"
-
     });
-
 }
 
+function hasEntry(dateKey) {
+    const data = entries[dateKey];
+    return Boolean(data && (data.focus || data.work || data.time));
+}
 
-/* CREATE CALENDAR */
+function setStatus(message, isError = false) {
+    $("firebaseStatus").textContent = message;
+    $("firebaseStatus").style.color = isError ? "#fca5a5" : "#94a3b8";
+}
 
-function createCalendar() {
+/* INITIALIZE FIREBASE */
 
-    const calendar =
-        document.getElementById("calendar");
-
-    calendar.replaceChildren();
-
-    const dayNames = [
-        "Sun",
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat"
-    ];
-
-    dayNames.forEach((name) => {
-
-        const label = document.createElement("div");
-
-        label.className = "day-name";
-
-        label.textContent = name;
-
-        calendar.appendChild(label);
-
-    });
-
-
-    const year = currentDate.getFullYear();
-
-    const month = currentDate.getMonth();
-
-    const firstDay =
-        new Date(year, month, 1).getDay();
-
-    const totalDays =
-        new Date(year, month + 1, 0).getDate();
-
-
-    document.getElementById("monthYear").textContent =
-        currentDate.toLocaleString("en-US", {
-            month: "long",
-            year: "numeric"
-        });
-
-
-    /* EMPTY CALENDAR SPACES */
-
-    for (let i = 0; i < firstDay; i++) {
-
-        const empty = document.createElement("div");
-
-        empty.className = "empty";
-
-        empty.setAttribute("aria-hidden", "true");
-
-        calendar.appendChild(empty);
-
+try {
+    if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
     }
 
+    auth = firebase.auth();
+    db = firebase.firestore();
+
+    setStatus("Firebase initialized. Loading entries...");
+
+} catch (error) {
+    console.error("Firebase initialization error:", error);
+    setStatus("Firebase initialization failed: " + error.message, true);
+}
+
+/* READ ENTRIES FROM FIRESTORE */
+
+function loadEntries() {
+    if (!db) return;
+
+    if (unsubscribeEntries) unsubscribeEntries();
+
+    unsubscribeEntries = db.collection(COLLECTION_NAME).onSnapshot(
+        snapshot => {
+            entries = {};
+
+            snapshot.forEach(doc => {
+                const data = doc.data() || {};
+
+                /* Also supports the earlier test document fields:
+                   title, description and date. */
+
+                entries[doc.id] = {
+                    focus: data.focus || data.title || "",
+                    work: data.work || data.description || "",
+                    time: data.time || ""
+                };
+            });
+
+            createCalendar();
+            renderEntry(selectedDate);
+
+            if (ownerMode) {
+                loadWork(selectedDate);
+            }
+
+            setStatus("Connected to Firestore. " + snapshot.size + " document(s) loaded.");
+        },
+        error => {
+            console.error("Firestore read error:", error);
+            setStatus("Firestore read error: " + error.message, true);
+        }
+    );
+}
+
+/* CALENDAR */
+
+function createCalendar() {
+    const calendar = $("calendar");
+    calendar.replaceChildren();
+
+    ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].forEach(name => {
+        const label = document.createElement("div");
+        label.className = "day-name";
+        label.textContent = name;
+        calendar.appendChild(label);
+    });
+
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
+    const firstDay = new Date(year, month, 1).getDay();
+    const totalDays = new Date(year, month + 1, 0).getDate();
+
+    $("monthYear").textContent = currentDate.toLocaleString("en-US", {
+        month: "long",
+        year: "numeric"
+    });
+
+    for (let i = 0; i < firstDay; i++) {
+        const empty = document.createElement("div");
+        empty.className = "empty";
+        calendar.appendChild(empty);
+    }
 
     const todayKey = toDateKey(new Date());
 
-
-    /* CREATE DATE BUTTONS */
-
     for (let day = 1; day <= totalDays; day++) {
-
-        const dateKey =
-            `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+        const dateKey = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
 
         const dateBox = document.createElement("button");
-
         dateBox.type = "button";
-
         dateBox.className = "date";
-
         dateBox.textContent = day;
+        dateBox.setAttribute("aria-label", formatDate(dateKey));
 
-        dateBox.setAttribute(
-            "aria-label",
-            formatDate(dateKey)
-        );
+        if (dateKey === todayKey) dateBox.classList.add("today");
+        if (hasEntry(dateKey)) dateBox.classList.add("has-entry");
+        if (dateKey === selectedDate) dateBox.classList.add("selected");
 
-
-        if (dateKey === todayKey) {
-
-            dateBox.classList.add("today");
-
-        }
-
-        if (entries[dateKey]) {
-
-            dateBox.classList.add("has-entry");
-
-        }
-
-        if (dateKey === selectedDate) {
-
-            dateBox.classList.add("selected");
-
-        }
-
-
-        dateBox.addEventListener("click", () => {
-
-            selectDate(dateKey);
-
-        });
-
-
+        dateBox.addEventListener("click", () => selectDate(dateKey));
         calendar.appendChild(dateBox);
-
     }
 
-
     updateEntryCount();
-
 }
-
-
-/* UPDATE ENTRY COUNT */
 
 function updateEntryCount() {
-
-    const count = Object.keys(entries).filter((key) =>
-
-        entries[key] && (
-            entries[key].focus ||
-            entries[key].work ||
-            entries[key].time
-        )
-
-    ).length;
-
-
-    document.getElementById("entryCount").textContent =
+    const count = Object.keys(entries).filter(hasEntry).length;
+    $("entryCount").textContent =
         `${count} saved ${count === 1 ? "entry" : "entries"}`;
-
 }
 
-
-/* CHANGE MONTH */
-
 function changeMonth(amount) {
-
     currentDate = new Date(
         currentDate.getFullYear(),
         currentDate.getMonth() + amount,
         1
     );
-
     createCalendar();
-
 }
 
-
-/* SELECT DATE */
-
 function selectDate(dateKey) {
-
     selectedDate = dateKey;
-
     renderEntry(dateKey);
 
     if (ownerMode) {
-
         loadWork(dateKey);
-
     }
 
     createCalendar();
-
 }
 
-
-/* DISPLAY ENTRY FIELD */
+/* DISPLAY ENTRIES */
 
 function appendEntryField(container, label, value) {
-
     if (!value) return;
 
     const field = document.createElement("div");
-
     field.className = "entry-field";
 
-
     const heading = document.createElement("strong");
-
     heading.textContent = label;
 
-
     const text = document.createElement("p");
-
     text.textContent = value;
 
-
     field.append(heading, text);
-
     container.appendChild(field);
-
 }
-
-
-/* SHOW PUBLIC ENTRY */
 
 function renderEntry(dateKey) {
-
-    const display =
-        document.getElementById("entryDisplay");
-
+    const display = $("entryDisplay");
     display.replaceChildren();
 
-
     const heading = document.createElement("h3");
-
-    heading.id = "entryDisplayDate";
-
-    heading.textContent =
-        `Progress on ${formatDate(dateKey)}`;
-
+    heading.textContent = "Progress on " + formatDate(dateKey);
     display.appendChild(heading);
 
-
     const data = entries[dateKey] || {};
-
 
     if (!data.focus && !data.work && !data.time) {
-
         const message = document.createElement("p");
-
         message.className = "empty-message";
-
-        message.textContent =
-            "No progress entry has been added for this date yet.";
-
+        message.textContent = "No progress entry has been added for this date yet.";
         display.appendChild(message);
-
         return;
-
     }
 
-
-    appendEntryField(
-        display,
-        "FOCUS / TOPIC",
-        data.focus
-    );
-
-    appendEntryField(
-        display,
-        "DAILY WORK",
-        data.work
-    );
-
-    appendEntryField(
-        display,
-        "TIME SPENT",
-        data.time
-    );
-
+    appendEntryField(display, "FOCUS / TOPIC", data.focus);
+    appendEntryField(display, "DAILY WORK", data.work);
+    appendEntryField(display, "TIME SPENT", data.time);
 }
-
-
-/* LOAD DATA INTO EDITING FORM */
 
 function loadWork(dateKey) {
-
     const data = entries[dateKey] || {};
 
-
-    document.getElementById("selectedDate").textContent =
-        `Editing: ${formatDate(dateKey)}`;
-
-
-    document.getElementById("focus").value =
-        data.focus || "";
-
-
-    document.getElementById("work").value =
-        data.work || "";
-
-
-    document.getElementById("time").value =
-        data.time || "";
-
+    $("selectedDate").textContent = "Editing: " + formatDate(dateKey);
+    $("focus").value = data.focus || "";
+    $("work").value = data.work || "";
+    $("time").value = data.time || "";
 }
 
+/* FIREBASE OWNER LOGIN */
 
-/* UNLOCK OWNER */
+async function unlockOwner() {
+    const email = $("ownerEmail").value.trim();
+    const password = $("ownerPassword").value;
+    const errorMessage = $("loginError");
+    const loginButton = $("loginButton");
 
-function unlockOwner() {
+    if (!email || !password) {
+        errorMessage.textContent = "Please enter both email and password.";
+        errorMessage.hidden = false;
+        return;
+    }
 
-    const passwordInput =
-        document.getElementById("ownerPassword");
+    loginButton.disabled = true;
+    loginButton.textContent = "Logging in...";
 
-    const password = passwordInput.value;
+    try {
+        await auth.signInWithEmailAndPassword(email, password);
 
-    const errorMessage =
-        document.getElementById("loginError");
+        ownerMode = true;
+        errorMessage.hidden = true;
+        $("ownerLoginPanel").hidden = true;
+        $("ownerPanel").hidden = false;
 
+        loadWork(selectedDate);
 
-    if (password !== OWNER_PASSWORD) {
+        $("ownerUnlockMessage").textContent =
+            "You are signed in. Your changes will be saved to Firestore.";
+
+    } catch (error) {
+        console.error("Login error:", error);
+
+        errorMessage.textContent =
+            "Login failed: " + error.message;
 
         errorMessage.hidden = false;
 
-        passwordInput.focus();
-
-        return;
-
+    } finally {
+        loginButton.disabled = false;
+        loginButton.textContent = "Unlock Editing";
     }
-
-
-    ownerMode = true;
-
-    errorMessage.hidden = true;
-
-
-    document.getElementById("ownerLoginPanel").hidden = true;
-
-    document.getElementById("ownerPanel").hidden = false;
-
-
-    loadWork(selectedDate);
-
-
-    document.getElementById("ownerUnlockMessage").textContent =
-
-        `Editing unlocked for ${formatDate(selectedDate)}. Write your work below and press Save Progress.`;
-
-
-    /* OPEN THE WRITING AREA AFTER UNLOCKING */
-
-    document.getElementById("ownerPanel").scrollIntoView({
-
-        behavior: "smooth",
-
-        block: "center"
-
-    });
-
-
-    document.getElementById("work").focus({
-
-        preventScroll: true
-
-    });
-
 }
 
+/* KEEP LOGIN STATE UPDATED */
 
-/* LOCK OWNER */
+function handleAuthState(user) {
+    ownerMode = Boolean(user);
 
-function lockOwner() {
+    $("ownerLoginPanel").hidden = ownerMode;
+    $("ownerPanel").hidden = !ownerMode;
 
-    ownerMode = false;
+    if (user) {
+        $("ownerUnlockMessage").textContent =
+            "Signed in as " + user.email + ". Your changes will be saved to Firestore.";
 
-
-    document.getElementById("ownerPanel").hidden = true;
-
-    document.getElementById("ownerLoginPanel").hidden = false;
-
-
-    document.getElementById("ownerPassword").value = "";
-
-    document.getElementById("focus").value = "";
-
-    document.getElementById("work").value = "";
-
-    document.getElementById("time").value = "";
-
+        loadWork(selectedDate);
+    } else {
+        $("ownerPassword").value = "";
+    }
 }
 
+/* LOGOUT */
 
-/* SAVE ENTRIES IN BROWSER */
-
-function persistEntries() {
-
+async function lockOwner() {
     try {
-
-        localStorage.setItem(
-            STORAGE_KEY,
-            JSON.stringify(entries)
-        );
-
-        return true;
-
+        await auth.signOut();
     } catch (error) {
-
-        alert(
-            "Your browser could not save this entry. Please check browser storage settings."
-        );
-
-        console.error(
-            "Progress could not be saved.",
-            error
-        );
-
-        return false;
-
+        console.error("Logout error:", error);
+        alert("Could not log out: " + error.message);
     }
-
 }
 
+/* SAVE TO FIRESTORE */
 
-/* SAVE DAILY WORK */
-
-function saveWork() {
-
-    if (!ownerMode) {
-
-        alert("Please unlock owner editing first.");
-
+async function saveWork() {
+    if (!auth.currentUser || !ownerMode) {
+        alert("Please login as owner first.");
         return;
-
     }
 
-
-    if (!selectedDate) {
-
-        alert("Please select a date first!");
-
-        return;
-
-    }
-
-
-    const focus =
-        document.getElementById("focus").value.trim();
-
-    const work =
-        document.getElementById("work").value.trim();
-
-    const time =
-        document.getElementById("time").value.trim();
-
+    const focus = $("focus").value.trim();
+    const work = $("work").value.trim();
+    const time = $("time").value.trim();
 
     if (!focus && !work && !time) {
-
         alert("Please write something before saving!");
-
         return;
-
     }
 
+    const saveButton = $("saveButton");
+    saveButton.disabled = true;
+    saveButton.textContent = "Saving...";
 
-    entries[selectedDate] = {
+    try {
+        await db.collection(COLLECTION_NAME)
+            .doc(selectedDate)
+            .set({
+                focus: focus,
+                work: work,
+                time: time,
+                date: selectedDate,
+                updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+            }, { merge: true });
 
-        focus,
-        work,
-        time
+        alert("Your entry has been saved to Firebase Firestore!");
 
-    };
+    } catch (error) {
+        console.error("Firestore save error:", error);
+        alert("Firebase save failed: " + error.message);
 
-
-    if (!persistEntries()) return;
-
-
-    renderEntry(selectedDate);
-
-    createCalendar();
-
-
-    alert(
-        "Your progress has been saved in this browser! 🎉"
-    );
-
+    } finally {
+        saveButton.disabled = false;
+        saveButton.textContent = "Save Progress";
+    }
 }
 
+/* DELETE FROM FIRESTORE */
 
-/* DELETE DAILY WORK */
-
-function deleteWork() {
-
-    if (!ownerMode) {
-
-        alert("Please unlock owner editing first.");
-
+async function deleteWork() {
+    if (!auth.currentUser || !ownerMode) {
+        alert("Please login as owner first.");
         return;
-
     }
 
-
-    if (!selectedDate || !entries[selectedDate]) {
-
+    if (!hasEntry(selectedDate)) {
         alert("No saved entry found for this date!");
-
         return;
-
     }
-
 
     if (!confirm("Are you sure you want to delete this entry?")) {
-
         return;
-
     }
 
+    const deleteButton = $("deleteButton");
+    deleteButton.disabled = true;
 
-    delete entries[selectedDate];
+    try {
+        await db.collection(COLLECTION_NAME)
+            .doc(selectedDate)
+            .delete();
 
+        $("focus").value = "";
+        $("work").value = "";
+        $("time").value = "";
 
-    if (!persistEntries()) return;
+        alert("Entry deleted from Firestore successfully!");
 
+    } catch (error) {
+        console.error("Firestore delete error:", error);
+        alert("Could not delete entry: " + error.message);
 
-    loadWork(selectedDate);
-
-    renderEntry(selectedDate);
-
-    createCalendar();
-
-
-    alert("Entry deleted successfully!");
-
+    } finally {
+        deleteButton.disabled = false;
+    }
 }
 
+/* BUTTON EVENTS */
 
-/* PRESS ENTER TO UNLOCK */
+$("previousMonth").addEventListener("click", () => changeMonth(-1));
+$("nextMonth").addEventListener("click", () => changeMonth(1));
+$("loginButton").addEventListener("click", unlockOwner);
+$("lockButton").addEventListener("click", lockOwner);
+$("saveButton").addEventListener("click", saveWork);
+$("deleteButton").addEventListener("click", deleteWork);
 
-document
-    .getElementById("ownerPassword")
-    .addEventListener("keydown", (event) => {
-
-        if (event.key === "Enter") {
-
-            event.preventDefault();
-
-            unlockOwner();
-
-        }
-
+["ownerEmail", "ownerPassword"].forEach(id => {
+    $(id).addEventListener("keydown", event => {
+        if (event.key === "Enter") unlockOwner();
     });
+});
 
-
-/* INITIAL LOAD */
+/* START */
 
 createCalendar();
-
 renderEntry(selectedDate);
 
+if (auth && db) {
+    auth.onAuthStateChanged(handleAuthState);
+    loadEntries();
+} else {
+    setStatus("Firebase did not initialize. Check the configuration.", true);
+}
 </script>
 
 </body>
 </html>
-
